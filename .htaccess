@@ -1,0 +1,2 @@
+rewriteengine on
+rewriterule ^(.+)?$ /web/$1
