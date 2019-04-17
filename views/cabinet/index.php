@@ -17,9 +17,16 @@
     echo \yii\grid\GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
+            'id',
             'description',
             'amount',
-//            'balance',
+            'balance_before',
+            [
+                'label'=>'Balance after',
+                'content'=>function($data){
+                    return $data->balance_before+$data->amount;
+                },
+            ],
             'time_create:date',
         ],
     ]);
