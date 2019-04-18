@@ -28,6 +28,7 @@ class LoginForm extends Model
         return [
             // username and password are both required
             [['username'], 'required'],
+            ['username', 'match', 'pattern' => '/^[a-zA-Z0-9_-]+$/', 'message' => 'Your username can only contain alphanumeric characters, underscores and dashes.'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
